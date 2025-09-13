@@ -2,6 +2,7 @@ import { CifradoDecorador } from "./Decoradores/concretas/CifradoDecorador";
 import { ConpresionDecorador } from "./Decoradores/concretas/ConpresionDecorador";
 import { EncabezadoDecorador } from "./Decoradores/concretas/EscabezadoDecorador";
 import { MarcaAguaDecorador } from "./Decoradores/concretas/MarcaAguaDecorador";
+import { EntregaCorreo } from "./Entrega/concretas/EntregaCorreo";
 import { EstrategiaEjecutivo } from "./Procesamiento/concretas/EstrategiaEjecutivo";
 import { ReporteFactory } from "./Reportes/ReporteFactory"
 
@@ -29,5 +30,7 @@ reporte.generarReporte();
 const procesamiento = new EstrategiaEjecutivo();
 procesamiento.procesar(reporte);
 
-
+//entregar via correo
+const entrega = new EntregaCorreo();
+entrega.entregar(reporte);
 
