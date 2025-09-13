@@ -2,6 +2,7 @@ import { CifradoDecorador } from "./Decoradores/concretas/CifradoDecorador";
 import { ConpresionDecorador } from "./Decoradores/concretas/ConpresionDecorador";
 import { EncabezadoDecorador } from "./Decoradores/concretas/EscabezadoDecorador";
 import { MarcaAguaDecorador } from "./Decoradores/concretas/MarcaAguaDecorador";
+import { EstrategiaEjecutivo } from "./Procesamiento/concretas/EstrategiaEjecutivo";
 import { ReporteFactory } from "./Reportes/ReporteFactory"
 
 console.log('MODULO ! ----------- ')
@@ -23,4 +24,10 @@ reporte = new ConpresionDecorador(reporte);
 
 
 reporte.generarReporte();
+
+// Procesamiento de reporte ejecutivo 
+const procesamiento = new EstrategiaEjecutivo();
+procesamiento.procesar(reporte);
+
+
 
